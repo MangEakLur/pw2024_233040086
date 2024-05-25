@@ -1,3 +1,16 @@
+<?php 
+require 'functions.php';
+// Jika tombol tambah ditekan
+if(isset($_POST['tambah'])) {
+    // jika data berhasil ditambahkan
+    if(tambah($_POST) > 0){
+        echo "<script>
+            alert('data berhasil ditambahkan!');
+            document.location.href = 'index.php';
+        </script>";
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -14,7 +27,7 @@
     <form action="" method="POST">
         <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama">
+            <input type="text" class="form-control" id="nama" name="nama" required>
         </div>
         <div class="mb-3">
             <label for="nim" class="form-label">NIM</label>
